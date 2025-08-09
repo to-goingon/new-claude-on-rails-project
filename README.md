@@ -132,8 +132,21 @@ bin/rails db:prepare
 # 코드 검사/보안
 bin/brakeman --no-pager
 bin/rubocop -f github
+
+# Regenerate Swarm Configuration
+rails generate claude_on_rails:swarm
+
+# To verify your Rails MCP Server setup:
+bundle exec rake claude_on_rails:mcp_status
+# This shows:
+# Installation status
+# Downloaded resources
+# Missing resources
 ```
 
 ### 라이선스
 
-- 명시되지 않았습니다. 필요 시 조직 정책에 맞춰 추가하세요.
+- 본 프로젝트는 MIT 라이센스를 따릅니다.  
+  MIT 라이센스는 소프트웨어를 자유롭게 사용, 복사, 수정, 병합, 배포, 출판할 수 있도록 허용하며,  
+  저작권 고지와 라이센스 사본을 소스 코드에 포함해야 합니다.  
+  이 라이센스는 소프트웨어에 대한 보증을 제공하지 않습니다.
