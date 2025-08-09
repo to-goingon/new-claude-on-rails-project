@@ -38,10 +38,10 @@ gem "kamal", require: false
 gem "thruster", require: false
 
 # Rails wrapper v3 latest stable
-gem "tailwindcss-rails", "3.3.2"
+gem "tailwindcss-rails", "4.3.0"
 
 # Tailwind CLI v3.4.17
-gem "tailwindcss-ruby",  "3.4.17"
+gem "tailwindcss-ruby",  "4.1.11"
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
