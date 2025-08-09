@@ -47,3 +47,26 @@ gh-*
 
 # Kamal deploy config
 .kamal/
+
+# Rails common ignores
+# - 개발용 SQLite DB 파일과 저널 파일은 버전 관리에서 제외
+/db/*.sqlite3
+/db/*.sqlite3*
+
+# - Bundler가 설치하는 로컬 gem 캐시는 제외
+/vendor/bundle/
+/vendor/cache/
+
+# - 테스트 커버리지 및 문서 생성 산출물 제외
+/coverage/
+/.yardoc
+/_yardoc
+
+# - 디버깅/에디터/OS 생성 파일 제외
+/.byebug_history
+*.swp
+*.swo
+.DS_Store
+
+# - JS 의존성 디렉터리(향후 도입 대비)
+/node_modules/
