@@ -64,6 +64,10 @@ gh-*
 
 # - 디버깅/에디터/OS 생성 파일 제외
 /.byebug_history
+/.idea/
+/.vscode/
+/.fleet/
+*.iml
 *.swp
 *.swo
 .DS_Store
