@@ -1,6 +1,6 @@
 # Claude on Rails Template
 
-이 리포지토리는 “claude-on-rails 프로젝트 생성을 위한 템플릿”입니다. Rails 8 최소 구성을 기본으로 하며 Importmap/Propshaft, Hotwire(Turbo/Stimulus), Tailwind CSS(v3)와 기본 CI(깃허브 액션)를 포함합니다.
+이 리포지토리는 "claude-on-rails 프로젝트 생성을 위한 템플릿"입니다. Rails 8 최소 구성을 기본으로 하며 Importmap/Propshaft, Hotwire(Turbo/Stimulus), Tailwind CSS(v3), Lucide 아이콘 시스템과 기본 CI(깃허브 액션)를 포함합니다.
 
 ## 템플릿 사용법
 
@@ -34,6 +34,7 @@ bin/dev
 - **자산 파이프라인**: Propshaft + Importmap (Node/npm 불필요)
 - **Hotwire**: `turbo-rails`, `stimulus-rails`
 - **Tailwind CSS v3**: `tailwindcss-rails 3.3.2` + `tailwindcss-ruby 3.4.17`
+- **아이콘**: rails_icons gem (~> 1.4) + Lucide 아이콘 라이브러리
 - **품질/보안**: Brakeman, RuboCop(omakase)
 - **기타**: Kamal(배포 준비), Thruster(Puma 가속), Solid Cache/Queue/Cable 세트
 
@@ -142,6 +143,33 @@ bundle exec rake claude_on_rails:mcp_status
 # Installation status
 # Downloaded resources
 # Missing resources
+```
+
+### Git 브랜치 관리
+
+현재 브랜치를 메인 브랜치와 병합하는 방법:
+
+```bash
+# 1. 메인 브랜치로 전환
+git checkout main
+
+# 2. 메인 브랜치를 최신 상태로 업데이트
+git pull origin main
+
+# 3. 현재 작업 브랜치를 메인으로 병합
+git merge <branch-name>
+
+# 4. 변경사항을 원격 저장소에 푸시
+git push origin main
+
+# 5. 작업 완료된 브랜치 삭제 (선택사항)
+git branch -d <branch-name>
+git push origin --delete <branch-name>
+```
+
+Fast-forward 병합이 아닌 명시적 병합 커밋을 원하는 경우:
+```bash
+git merge --no-ff <branch-name>
 ```
 
 ### 라이선스
