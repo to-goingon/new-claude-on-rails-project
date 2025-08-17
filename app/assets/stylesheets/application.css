@@ -8,3 +8,5 @@
  *
  * Consider organizing styles into separate files for maintainability.
  */
+
+@import url('https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.snow.css');
