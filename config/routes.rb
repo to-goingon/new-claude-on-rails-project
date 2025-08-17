@@ -11,5 +11,8 @@ Rails.application.routes.draw do
 
   # Quill.js demo route
   get "quill_demo", to: "quill_demo#index"
-  root "quill_demo#index"
+  # root "quill_demo#index"
+
+  # ignore favicon request
+  get "/favicon.ico", to: ->(_env) { [ 204, {}, [] ] }
 end
