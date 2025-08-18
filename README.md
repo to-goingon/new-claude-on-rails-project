@@ -34,6 +34,7 @@ bin/dev
 - **자산 파이프라인**: Propshaft + Importmap (Node/npm 불필요)
 - **Hotwire**: `turbo-rails`, `stimulus-rails`
 - **Tailwind CSS v3**: `tailwindcss-rails 3.3.2` + `tailwindcss-ruby 3.4.17`
+- **Quill.js**: 2.0.3 (리치 텍스트 에디터, 커스텀 Font Size 드롭다운 포함)
 - **품질/보안**: Brakeman, RuboCop(omakase)
 - **기타**: Kamal(배포 준비), Thruster(Puma 가속), Solid Cache/Queue/Cable 세트
 
@@ -116,6 +117,30 @@ bin/rails test:system   # 시스템 테스트(Chrome 필요)
 ### 배포
 
 - Kamal 젬이 포함되어 있습니다(옵션). 실제 배포 설정은 이 리포지토리에는 포함되어 있지 않습니다. Kamal 사용 시 `config/deploy.yml` 구성 및 레지스트리/서버 설정이 필요합니다.
+
+### Quill.js 리치 텍스트 에디터
+
+이 프로젝트에는 Quill.js 2.0.3 리치 텍스트 에디터가 설치되어 있습니다.
+
+#### 특징
+- **버전**: 2.0.3 (CDN 연결)
+- **커스텀 Font Size 드롭다운**: 8px부터 72px까지 선택 가능
+- **Rails 폼 통합**: Stimulus 컨트롤러로 완전 통합
+- **반응형 디자인**: 모든 디바이스에서 동작
+
+#### 설치 구성요소
+- `config/importmap.rb`: Quill.js CDN 설정
+- `app/javascript/controllers/quill_controller.js`: Stimulus 컨트롤러
+- `app/assets/stylesheets/application.css`: Quill Snow 테마 CSS
+- 상세한 설정 가이드: `docs/quill.js-setup-guide.md`
+
+#### 사용법
+```erb
+<div data-controller="quill">
+  <div data-quill-target="editor"></div>
+  <input type="hidden" data-quill-target="hiddenInput" name="content" />
+</div>
+```
 
 ### 유용한 명령어
 
